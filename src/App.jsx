@@ -89,18 +89,7 @@ const modules = [
           { key: "", name: "status", note: "ACTIVE, MAINTENANCE, CLOSED" },
         ],
       },
-      {
-        name: "PRTY_DOCUMENT",
-        columns: [
-          { key: "PK", name: "id", bold: true },
-          { key: "FK", name: "unit_id", bold: true },
-          { key: "", name: "document_type" },
-          { key: "", name: "file_name" },
-          { key: "", name: "file_path" },
-          { key: "", name: "uploaded_by" },
-          { key: "", name: "uploaded_at" },
-        ],
-      },
+
     ],
   },
   {
@@ -293,18 +282,7 @@ const modules = [
           { key: "", name: "status", note: "ACTIVE, MOVED_OUT" },
         ],
       },
-      {
-        name: "TNNT_DOCUMENT",
-        columns: [
-          { key: "PK", name: "id", bold: true },
-          { key: "FK", name: "customer_id", bold: true },
-          { key: "", name: "document_type", note: "ID_CARD, PASSPORT, REGISTRATION, CONTRACT" },
-          { key: "", name: "file_name" },
-          { key: "", name: "file_path" },
-          { key: "", name: "expiry_date" },
-          { key: "", name: "uploaded_at" },
-        ],
-      },
+
       {
         name: "TNNT_OWNER",
         columns: [
@@ -805,6 +783,30 @@ const modules = [
           { key: "", name: "response_code" },
           { key: "", name: "error_message" },
           { key: "", name: "synced_at" },
+        ],
+      },
+    ],
+  },
+  {
+    id: "docu",
+    prefix: "DOCU",
+    name: "Document Management",
+    color: "#b45309",
+    tables: [
+      {
+        name: "DOCU_DOCUMENT",
+        columns: [
+          { key: "PK", name: "id", bold: true },
+          { key: "", name: "entity_type", note: "UNIT, BUILDING, PROJECT, CUSTOMER, CONTRACT, ASSET, TICKET" },
+          { key: "", name: "entity_id" },
+          { key: "", name: "document_type", note: "ID_CARD, PASSPORT, REGISTRATION, CONTRACT, FLOOR_PLAN, PHOTO, REPORT, OTHER" },
+          { key: "", name: "file_name" },
+          { key: "", name: "file_path" },
+          { key: "", name: "file_size" },
+          { key: "", name: "mime_type" },
+          { key: "", name: "expiry_date", note: "nullable" },
+          { key: "", name: "uploaded_by" },
+          { key: "", name: "uploaded_at" },
         ],
       },
     ],
